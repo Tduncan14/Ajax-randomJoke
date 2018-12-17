@@ -12,6 +12,15 @@ const img = document.getElementById('img');
 mainBtn.addEventListener('click', function(){
     // creates an instantc
      const ajax = new XMLHttpRequest();
+     const url = "https://api.chucknorris.io/jokes/random";
+
+     ajax.open('GET', url, true);
+
+     ajax.onload = function(){
+         if(this.status === 200){
+             console.log(this.responseText);
+         }
+     }
 
      ajax.onerror = function(){
          console.log('there was an error');
